@@ -32,3 +32,9 @@ docker run -p 8000:8000 barter-app
 ```
 📌 Приложение будет доступно по адресу: http://localhost:8000
 
+---
+📖 Документация
+
+    Swagger UI: http://localhost:8000/swagger
+
+    ReDoc: http://localhost:8000/redoc
