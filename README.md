@@ -22,7 +22,7 @@
 ### 1. 📥 Клонируйте репозиторий
 ```bash
 git clone https://github.com/Anach0ret/barter-app.git
-cd barter
+cd barter-app
 ```
 
 ### 2. 🐳 Запуск с Docker 
