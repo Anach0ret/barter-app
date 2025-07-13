@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard | {{ block.super }}{% endblock %}
+
+{% block links %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'dashboard/css/dashboard.css' %}">
+<script src="{% static 'dashboard/js/toast.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<section class="dashboard">
+
+  <div class="container">
+      <ul class="dashboard-menu">
+          <h1 class="font-heading">Dashboard</h1>
+          <li><a href="{% url 'dashboard' %}" class="menu-tab active">My Ads</a></li>
+          <li><a href="{% url 'barters_box' %}" class="menu-tab">Barters Box</a></li>
+          <li><a href="{% url 'token' %}" class="menu-tab">API</a></li>
+      </ul>
+
+      <div class="dashboard-content">
+          {% block dashboard %}
+          {% endblock %}
+      </div>
+  </div>
+
+  {% if messages %}
+  <div class="toast-container" id="toast-container">
+    {% for message in messages %}
+      <div class="toast toast-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'dashboard/dashboard.html' %}
+{% load static %}
+
+{% block links %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'dashboard/css/my_ads.css' %}">
+{% endblock %}
+
+
+{% block dashboard %}
+<div class="my-ads-header">
+  <h3 class="font-heading">My Ads</h3>
+  <a href="{% url 'create_ad' %}" class="btn btn-primary">Add New</a>
+</div>
+
+{% if user_ads %}
+  <div class="ads-list">
+    {% for ad in user_ads %}
+        <div class="ad-card">
+          <a href="{{ ad.get_absolute_url }}">
+            <div class="ad-card-content">
+              <h4 class="font-heading">{{ ad.title }}</h4>
+              <p class="font-body">{{ ad.description|truncatewords:20 }}</p>
+              <small class="font-secondary">Created: {{ ad.created_at|date:"d.m.Y H:i" }}</small>
+            </div>
+            <div class="ad-card-actions">
+              <a href="{% url 'edit_ad' ad.pk %}" class="btn btn-secondary">Edit</a>
+              <a href="{% url 'delete_ad' ad.pk %}" class="btn btn-danger">Delete</a>
+            </div>
+          </a>
+        </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p class="font-secondary">You don't have any ads yet.</p>
+{% endif %}
+{% if is_paginated %}
+  <div class="pagination">
+    {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}" class="page-link">← Previous</a>
+    {% endif %}
+
+    <span class="page-number">
+      Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+    </span>
+
+    {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}" class="page-link">Next →</a>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% endblock %}
+
+
+

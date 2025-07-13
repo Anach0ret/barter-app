@@ -1,0 +1,79 @@
+.ad-detail-section {
+  padding: 40px 0;
+}
+
+.ad-detail-card {
+  display: flex;
+  gap: 32px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex-wrap: wrap;
+}
+
+.ad-detail-image {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.ad-detail-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.ad-detail-content {
+  flex: 1 1 400px;
+}
+
+.ad-title {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: var(--color-black);
+}
+
+.ad-meta {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ad-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.ad-action .btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.toggle-arrow {
+  text-align: center;
+  font-size: 18px;
+  color: #5c3d2e;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.toggle-arrow span:hover {
+  text-decoration: underline;
+}
+
+.barter-form {
+  margin-top: 30px;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: #fffdfb;
+}
+

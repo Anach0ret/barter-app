@@ -1,0 +1,69 @@
+@import url('ad-card.css');
+
+.ads-section {
+  padding: 40px 0;
+}
+
+.filter-bar {
+  margin-bottom: 24px;
+}
+
+.filter-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-select,
+.filter-input {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  font-size: 14px;
+  background-color: white;
+}
+
+.ads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+
+
+.ad-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--color-black);
+}
+
+.ad-description {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.ad-meta {
+  font-size: 13px;
+  color: #888;
+}
+
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.page-link {
+  padding: 8px 12px;
+  background-color: var(--color-accent-light);
+  color: var(--color-black);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.page-link:hover {
+  background-color: var(--color-accent-dark);
+  color: white;
+}

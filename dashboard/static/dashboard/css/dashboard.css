@@ -1,0 +1,107 @@
+@import url('my_ads.css');
+
+
+.dashboard {
+    padding: 40px 0;
+    background-color: var(--color-bg);
+}
+
+.dashboard .container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Боковое меню */
+.dashboard-menu {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 180px;
+}
+
+.dashboard-menu a {
+    display: block;
+    padding: 12px 16px;
+    background-color: var(--color-accent-light);
+    color: var(--color-black);
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dashboard-menu a:hover {
+    background-color: var(--color-accent-dark);
+    color: white;
+}
+
+/* Активная вкладка */
+.dashboard-menu a.active {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Контент справа */
+.dashboard-content {
+    flex-grow: 1;
+    background-color: var(--color-white);
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    min-height: 300px;
+}
+
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toast {
+  min-width: 200px;
+  max-width: 300px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideInFade 0.4s ease forwards;
+}
+
+/* Цвета по типу сообщения */
+.toast-success {
+  background-color: #4caf50;
+}
+
+.toast-error,
+.toast-danger {
+  background-color: #f44336;
+}
+
+.toast-info {
+  background-color: #2196f3;
+}
+
+.toast-warning {
+  background-color: #ff9800;
+}
+
+/* Анимация */
+@keyframes slideInFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

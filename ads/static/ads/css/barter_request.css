@@ -1,0 +1,65 @@
+@import url('ad-card.css');
+
+
+.barter-layout {
+  padding: 40px 0;
+}
+
+.barter-flex {
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.barter-ad-card,
+.barter-form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 300px;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 400px;
+  height: 100%;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.barter-form label {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+  display: block;
+}
+.barter-form input,
+.barter-form select,
+.barter-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+
+.barter-arrows {
+  font-size: 36px;
+  color: #5c3d2e;
+  padding: 60px 10px 0;
+}
+
+.barter-form .form-group {
+  margin-bottom: 16px;
+}
+
+.barter-form .form-buttons {
+  text-align: center;
+  margin-top: 20px;
+}

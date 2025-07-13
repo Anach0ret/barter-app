@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Send Barter Request | {{ receiver_ad.title }} | {{ block.super }} {% endblock %}
+{% block links %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'ads/css/barter_request.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="barter-layout">
+  <div class="container">
+    <div class="barter-flex">
+
+      <div class="barter-ad-card">
+        <h4 class="font-subheading">Requested Ad</h4>
+        <div class="ad-card">
+          {% if receiver_ad.image_url %}
+            <div class="ad-image">
+                <img src="{{ receiver_ad.image_url }}" alt="{{ receiver_ad.title }}">
+            </div>
+          {% endif %}
+          <h5 class="font-subheading">{{ receiver_ad.title }}</h5>
+          <p class="font-body">{{ receiver_ad.description|truncatewords:15 }}</p>
+          <small class="font-secondary">{{ receiver_ad.get_category_display }} · {{ receiver_ad.get_condition_display }}</small>
+        </div>
+      </div>
+
+      <div class="barter-arrows">
+        <span>⇄</span>
+      </div>
+
+      <div class="barter-form-box">
+        <h4 class="font-subheading">Your Offer</h4>
+        <form method="post" class="barter-form">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          {% for field in form %}
+            <div class="form-group">
+              {{ field.label_tag }}
+              {{ field }}
+              {% if field.errors %}
+                <div class="form-error font-secondary">{{ field.errors|striptags }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+          <div class="form-buttons">
+            <button type="submit" class="btn btn-primary">Send Request</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

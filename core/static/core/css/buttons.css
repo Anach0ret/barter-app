@@ -1,0 +1,50 @@
+button,
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Основная кнопка */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-dark);
+    transform: scale(1.02);
+}
+
+/* Вторичная кнопка */
+.btn-secondary {
+    background-color: var(--color-accent-light);
+    color: var(--color-black);
+}
+
+.btn-secondary:hover {
+    background-color: #dec09a;
+    transform: scale(1.02);
+}
+
+/* Кнопка удаления / опасная */
+.btn-danger {
+    background-color: var(--color-danger);
+    color: var(--color-white);
+}
+
+.btn-danger:hover {
+    transform: scale(1.02);
+}
+
+/* Неактивная кнопка */
+.btn-disabled {
+    background-color: #aaa;
+    color: #eee;
+    cursor: not-allowed;
+    opacity: 0.7;
+}

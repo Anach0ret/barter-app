@@ -1,0 +1,29 @@
+.font-heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+}
+
+.font-subheading {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+.font-body {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+.font-secondary {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+

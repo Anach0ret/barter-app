@@ -1,0 +1,85 @@
+/* Заголовок блока */
+.my-ads-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Кнопка Add New */
+.my-ads-header .btn {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: var(--color-primary);
+  color: #fff;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.my-ads-header .btn:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Список карточек */
+.ads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+/* Карточка */
+.ad-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #fff 0%, #fdf8f4 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  flex-wrap: wrap;
+}
+
+.ad-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.ad-card-content {
+  flex: 1 1 70%;
+  min-width: 250px;
+}
+
+.ad-card-content h4 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: var(--color-black);
+}
+
+.ad-card-content p {
+  margin-bottom: 6px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.ad-card-content small {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Действия */
+.ad-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  min-width: 120px;
+}

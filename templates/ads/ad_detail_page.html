@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ ad.title }} | {{ block.super }}{% endblock %}
+
+{% block links %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'ads/css/ad_detail_page.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="ad-detail-section">
+  <div class="container">
+
+    <div class="ad-detail-card">
+      {% if ad.image_url %}
+        <div class="ad-detail-image">
+          <img src="{{ ad.image_url }}" alt="{{ ad.title }}">
+        </div>
+      {% endif %}
+
+      <div class="ad-detail-content">
+        <h1 class="ad-title">{{ ad.title }}</h1>
+
+        <div class="ad-meta">
+          <span><strong>Category:</strong> {{ ad.get_category_display }}</span>
+          <span><strong>Condition:</strong> {{ ad.get_condition_display }}</span>
+          <span><strong>City:</strong> {{ ad.user.city }}</span>
+          <span><strong>Published:</strong> {{ ad.created_at|date:"d M Y, H:i" }}</span>
+        </div>
+
+        <p class="ad-description">{{ ad.description }}</p>
+
+        <div class="ad-action">
+          <a href="{% url 'barter_request' ad.slug %}" class="btn btn-primary">Send Barter Request</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

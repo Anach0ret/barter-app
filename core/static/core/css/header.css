@@ -1,0 +1,38 @@
+/* Header */
+header {
+    border-bottom: 1px solid #ddd;
+    padding: 16px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5c3d2e;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav li {
+    font-size: 16px;
+}
+
+nav a {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #5c3d2e;
+}

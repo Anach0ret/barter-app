@@ -1,0 +1,78 @@
+.barters-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Вкладки-кнопки */
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs-controls {
+  display: flex;
+  margin-bottom: 0;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs label {
+  padding: 10px 20px;
+  background-color: #f1eae3;
+  color: var(--color-black);
+  cursor: pointer;
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  margin-right: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.tabs label:hover {
+  background-color: #e0d2c6;
+}
+
+/* Активная вкладка */
+#tab-sent:checked ~ .tabs-controls label[for="tab-sent"],
+#tab-received:checked ~ .tabs-controls label[for="tab-received"] {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Контент вкладок */
+.tab-content {
+  display: none;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  background-color: white;
+}
+
+#tab-sent:checked ~ #sent-content,
+#tab-received:checked ~ #received-content {
+  display: block;
+}
+
+.barter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.barter-list li {
+  padding: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.barter-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}

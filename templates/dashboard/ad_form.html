@@ -1,0 +1,28 @@
+{% extends 'dashboard/dashboard.html' %}
+{% load static %}
+
+{% block links %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'dashboard/css/ad_form.css' %}">
+{% endblock %}
+
+
+{% block dashboard %}
+<h4 class="font-heading" style="margin-bottom: 15px;">{{ title }}</h4>
+<form method="post" class="registration-form">
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+  {% for field in form %}
+    <div class="form-group font-subheading">
+      {{ field.label_tag }}
+      {{ field }}
+      {% if field.errors %}
+        <div class="form-error font-secondary">{{ field.errors|striptags }}</div>
+      {% endif %}
+    </div>
+  {% endfor %}
+  <div class="form-buttons">
+    <button type="submit" class="btn-primary">{{ button_title }}</button>
+  </div>
+</form>
+{% endblock %}

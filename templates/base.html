@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Barter Platform{% endblock title %}</title>
+    {% block links %}
+    <link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+    {% endblock links %}
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1><a href="{% url 'main' %}">Barter</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'main' %}">Home</a></li>
+                    <li><a href="{% url 'ads' %}">ADS</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                        <li>
+                            <form id="logout-form" method="post" action="{% url 'logout' %}" style="display: inline;">
+                                {% csrf_token %}
+                                <a href="#" onclick="document.getElementById('logout-form').submit(); return false;"
+                                   class="menu-item">
+                                   Logout
+                                </a>
+                            </form>
+                        </li>
+
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer class="footer font-body">
+        <div class="container">
+            <p>&copy; 2025 Barter. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

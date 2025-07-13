@@ -1,0 +1,83 @@
+@import url('header.css');
+@import url('footer.css');
+@import url('fonts.css');
+@import url('buttons.css');
+
+
+:root {
+  --color-primary: #5c3d2e;
+  --color-black: #222222;
+  --color-bg: #f9f7f4;
+  --color-white: #ffffff;
+  --color-accent-light: #e7c8a1;
+  --color-accent-dark: #874c2f;
+  --color-danger: #c5423f;
+  --color-success: #547f5d;
+  --color-border: #cccccc;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    overscroll-behavior: none;
+    height: fit-content; min-height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color-black);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  flex: 1;
+  margin-top: 100px;
+  margin-bottom: 110px;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  font-size: 15px;
+}
+
+.page-link {
+  padding: 8px 12px;
+  background-color: var(--color-accent-light);
+  color: var(--color-black);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.page-link:hover {
+  background-color: var(--color-accent-dark);
+  color: white;
+}
+
+.page-number {
+  font-weight: 600;
+  color: #555;
+}
+
+.errorlist {
+  color: #ff7e7d;
+  }
