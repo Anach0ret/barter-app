@@ -9,10 +9,10 @@
 
 | Категория       | Используется                         |
 |-----------------|--------------------------------------|
-| Backend         | Django, DRF                          |
+| Backend         | Django 4+, Django REST               |
 | БД              | SqLite                               |
 | Контейнеризация | Docker                               |
-| Auth            | DRF Token Auth                       |
+| Аутентификация  | DRF Token Auth                       |
 
 
 ---
